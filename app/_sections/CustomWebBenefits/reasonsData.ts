@@ -1,9 +1,4 @@
-interface Reason {
-  title: string;
-  description: string;
-}
-
-const reasonsData: Reason[] = [
+const reasonsData = [
   {
     title: 'Unique Brand Identity',
     description:

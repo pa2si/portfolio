@@ -1,9 +1,10 @@
 import About from './_sections/About/About';
 import Hero from './_sections/Hero/Hero';
-import Intermediate from '../utils/Intermediate/Intermediate';
+import Intermediate from './_sections/Intermediate/Intermediate';
 import CustomWebBenefits from './_sections/CustomWebBenefits/CustomWebBenefits';
 import Functionalities from './_sections/Functionalities/Functionalities';
 import Layouts from './_sections/Layouts/Layouts';
+import Contact from './_sections/Contact/Contact';
 
 export default function Home() {
   return (
@@ -22,6 +23,11 @@ export default function Home() {
         id="layouts"
       />
       <Functionalities />
+      <Intermediate
+        text="Contact me and lets find out what you need!"
+        id="contact"
+      />
+      <Contact />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import reasonsData from './_components/reasonsData';
+import reasonsData from './reasonsData';
 import { motion } from 'framer-motion';
 
 const CustomWebBenefits = () => {
@@ -25,14 +25,18 @@ const CustomWebBenefits = () => {
     },
   };
 
-  const normal = {
-    initial: { opacity: 0 },
-    animate: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
+  const staggeredAnimation = {
+    initial: {
+      opacity: 0,
+      x: -100,
     },
+    animate: (index: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.1 * index,
+      },
+    }),
   };
 
   return (
@@ -52,10 +56,11 @@ const CustomWebBenefits = () => {
               <motion.div
                 key={index}
                 className="card bordered shadow-sm shadow-primary bg-base-200 bg-opacity-10"
-                variants={index < 3 ? slideIn : normal}
+                variants={index < 3 ? slideIn : staggeredAnimation}
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
+                custom={index}
               >
                 <div className="card-body">
                   <h3 className="card-title">{reason.title}</h3>

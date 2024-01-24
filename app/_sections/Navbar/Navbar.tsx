@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { pageLinks, socialLinks, email } from './data';
+import { socialLinks, email } from './data';
 
 const Navbar = () => {
   return (
@@ -31,13 +31,17 @@ const Navbar = () => {
               {/* Mobile View */}
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-primary  hover:text-primary-content info shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 text-primary  info shadow bg-base-100 rounded-box w-52"
               >
                 <li>
-                  <Link href="/#about">About</Link>
+                  <Link className="text-xl" href="#about">
+                    About
+                  </Link>
                 </li>
                 <li>
-                  <Link href="#projects">Projects</Link>
+                  <Link className="text-xl" href="#projects">
+                    Projects
+                  </Link>
                   <ul className="p-2">
                     <li>
                       <Link href="">Submenu 1</Link>
@@ -48,16 +52,17 @@ const Navbar = () => {
                   </ul>
                 </li>
                 <li>
-                  <Link href="">Item 3</Link>
+                  <Link className="text-xl" href="#contact">
+                    Contact
+                  </Link>
                 </li>
               </ul>
             </div>
             <Link
-              className="text-2xl text-primary font-bold tracking-[7px]"
+              className="text-2xl text-primary text-nowrap font-bold tracking-[7px]"
               href="/"
             >
-              Pascal{' '}
-              <span className="text-secondary text-nowrap"> Is Coding</span>
+              Pascal <span className="text-secondary ">Is Coding</span>
             </Link>
           </div>
           {/* Desktop View */}
@@ -92,7 +97,7 @@ const Navbar = () => {
                 </details>
               </li>
               <li>
-                <Link href="">Item 3</Link>
+                <Link href="#contact">Contact</Link>
               </li>
             </ul>
           </div>

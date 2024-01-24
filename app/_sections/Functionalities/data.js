@@ -1,12 +1,4 @@
-interface Funcionalities {
-  title: string;
-  image: string;
-  alt: string;
-  url: string;
-  description: string;
-}
-
-const functionalitiesData: Funcionalities[] = [
+const functionalitiesData = [
   {
     title: 'Modal',
     image: '/modal.png',

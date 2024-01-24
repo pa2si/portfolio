@@ -1,4 +1,4 @@
-import AnimatedText from '@/utils/AnimatedText';
+import AnimatedText from '@/components/shared/AnimatedText';
 import Link from 'next/link';
 
 const Hero = () => {

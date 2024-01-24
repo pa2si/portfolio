@@ -1,13 +1,35 @@
 import Image from 'next/image';
 import { FaQuoteRight } from 'react-icons/fa';
+import { MotionDiv } from '@/lib/MotionComponents';
 
 const About = () => {
+  const rotate = {
+    initial: {
+      opacity: 0.3,
+      x: -100,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <section
       className="min-h-[35rem] flex items-center justify-center bg-base-200 py-12"
       id="about"
     >
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-white shadow-xl rounded-lg overflow-hidden">
+      <MotionDiv
+        className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 bg-white shadow-xl rounded-lg overflow-hidden"
+        variants={rotate}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
         {/* Image container */}
         <div className="w-full h-[400px] md:h-auto relative">
           <Image
@@ -37,7 +59,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </MotionDiv>
     </section>
   );
 };
