@@ -8,7 +8,28 @@ const config = {
     './src/**/*.{ts,tsx}',
   ],
   daisyui: {
-    themes: ['fantasy', 'dark', 'cupcake'],
+    themes: [
+      {
+        fantasy: {
+          // Customizing the dark theme
+          ...require('daisyui/src/theming/themes')['fantasy'], // Use the default dark theme as a base
+          '.bg': {
+            'background-color': '#f9fafb',
+          }, // Tailwind CSS red-100
+          // You can add more customizations here
+        },
+      },
+      {
+        dark: {
+          // Customizing the dark theme
+          ...require('daisyui/src/theming/themes')['dark'], // Use the default dark theme as a base
+          '.bg': {
+            'background-color': '#212226',
+          }, // Tailwind CSS red-100
+          // You can add more customizations here
+        },
+      },
+    ],
   },
   prefix: '',
   theme: {

@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ item, index }) => {
   const delay = isInitiallyVisible ? 0 : (index - 3) * 0.1;
   return (
     <motion.div
-      className="card bg-base-100 shadow-xl"
+      className="card shadow-xl"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: delay }}
@@ -49,7 +49,8 @@ const Card: React.FC<CardProps> = ({ item, index }) => {
           />
         </a>
       </figure>
-      <div className="card-body">
+      {/* card */}
+      <div className="card-body bg">
         <h2 className="card-title">{item.title}</h2>
         <p>{item.description}</p>
       </div>
@@ -93,7 +94,7 @@ const Functionalities: React.FC = () => {
   return (
     <>
       <motion.section
-        className="max-w-7xl mx-auto p-4 bg-base-200 bg-opacity-10 rounded-lg shadow-lg shadow-primary my-8 border-t-2"
+        className="max-w-7xl mx-auto p-4 bg-base-300 bg-opacity-10 rounded-lg shadow-lg shadow-primary my-8 border-t-2"
         variants={slideIn}
         initial="initial"
         whileInView="animate"

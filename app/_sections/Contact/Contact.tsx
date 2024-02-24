@@ -3,11 +3,11 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { FormSchema } from '@/lib/validation/formSchema';
+import { motion } from 'framer-motion';
 
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -17,7 +17,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { z } from 'zod';
 import { Loader } from 'lucide-react';
-import { addEntry } from '@/utils/actions';
+import { sendEmail } from '@/utils/actions';
 import toast from 'react-hot-toast';
 
 const Contact = () => {
@@ -26,7 +26,7 @@ const Contact = () => {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       name: '',
-      email: '',
+      senderEmail: '',
       message: '',
     },
   });
@@ -34,13 +34,13 @@ const Contact = () => {
   // 2. Define a submit handler.
   const handleSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
-      const response = await addEntry(data);
+      const result = await sendEmail(data);
 
-      if (response.success) {
-        toast.success('Form submitted successfully!');
+      if (result.success) {
+        toast.success('Email sent, thank you!');
         form.reset();
       } else {
-        toast.error(`Error: ${response.error}`);
+        toast.error(`Error: ${result.error || 'Failed to send email'}`);
       }
     } catch (error: any) {
       toast.error('An unexpected error occurred.');
@@ -48,8 +48,31 @@ const Contact = () => {
     }
   };
 
+  /* animation */
+  const slideIn = {
+    initial: {
+      opacity: 0.3,
+      y: 100,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
-    <div className="max-w-2xl mx-auto px-5 mb-12 " id="contact">
+    <motion.div
+      className="max-w-2xl mx-auto p-8 mb-12 bg border-2 border-base-200 rounded-lg shadow-lg"
+      id="contact"
+      variants={slideIn}
+      initial="initial"
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
           <FormField
@@ -62,6 +85,7 @@ const Contact = () => {
                   <Input
                     type="text"
                     placeholder="Whats your name?"
+                    className="bg-base-100"
                     {...field}
                   />
                 </FormControl>
@@ -71,7 +95,7 @@ const Contact = () => {
           />
           <FormField
             control={form.control}
-            name="email"
+            name="senderEmail"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Email</FormLabel>
@@ -79,6 +103,7 @@ const Contact = () => {
                   <Input
                     type="email"
                     placeholder="i will reply back to that Email"
+                    className="bg-base-100 focus:ring- focus:ring-blue-500"
                     {...field}
                   />
                 </FormControl>
@@ -95,7 +120,7 @@ const Contact = () => {
                 <FormControl>
                   <Textarea
                     placeholder="How can i help you?"
-                    className="h-36"
+                    className="h-36 bg-base-100"
                     {...field}
                   />
                 </FormControl>
@@ -121,7 +146,7 @@ const Contact = () => {
           </div>
         </form>
       </Form>
-    </div>
+    </motion.div>
   );
 };
 export default Contact;

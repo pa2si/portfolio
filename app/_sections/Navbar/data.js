@@ -19,3 +19,19 @@ export const email = [
     icon: <AiOutlineMail />,
   },
 ];
+
+export const menuLinks = {
+  about: 'About',
+  aboutId: '#about',
+  customWebBenefits: 'Custom Web Benefits',
+  customWebBenefitsId: '#customWebBenefits',
+  examples: 'Examples',
+  layouts: 'Layouts',
+  layoutsId: '#layouts',
+  functionalities: 'Functionalities',
+  functionalitiesId: '#functionalities',
+  multiLanguage: 'Multi Language',
+  multiLanguageId: '#multiLanguage',
+  contact: 'Contact',
+  contactId: '#contact',
+};

@@ -7,21 +7,28 @@ import layoutsData from '../data';
 
 type LayoutProps = (typeof layoutsData)[number];
 
-const Layout = ({ title, image, alt, url, description }: LayoutProps) => {
+const LayoutExample = ({
+  title,
+  image,
+  alt,
+  url,
+  description,
+}: LayoutProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['0 1', '1.33 1'],
   });
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.4, 1]);
 
   return (
     <motion.div
       ref={ref}
       style={{ scale: scaleProgress, opacity: opacityProgress }}
+      className="flex"
     >
-      <div className="card bordered bg-white md:hover:scale-105 transform transition duration-300 ease-in-out shadow-lg">
+      <div className="card bordered md:hover:scale-105 transform transition duration-300 ease-in-out shadow-lg">
         <a href={url} target="_blank" rel="noopener noreferrer">
           <figure>
             <Image
@@ -34,9 +41,10 @@ const Layout = ({ title, image, alt, url, description }: LayoutProps) => {
             />
           </figure>
         </a>
-        <div className="card-body">
+        {/* card */}
+        <div className="card-body bg flex flex-col">
           <h2 className="card-title">{title}</h2>
-          <p>{description}</p>
+          <p className="flex-grow">{description}</p>
           <div className="card-actions justify-center mt-6 md:hidden">
             <a
               href={url}
@@ -52,4 +60,4 @@ const Layout = ({ title, image, alt, url, description }: LayoutProps) => {
     </motion.div>
   );
 };
-export default Layout;
+export default LayoutExample;

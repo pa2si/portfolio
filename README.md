@@ -1,4 +1,10 @@
-v 0.1.1
+v 0.1.2
+
+new:
+
+- Contact
+- Footer
+- Dark mode
 
 what's done:
 
@@ -8,8 +14,3 @@ what's done:
 - CustomWebBenefits
 - Layouts
 - Intermediates
-
-to do:
-
-- Footer
-- Sending mail for contact form

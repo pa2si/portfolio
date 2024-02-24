@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './_sections/Navbar/Navbar';
 import { BebasNeue } from './fonts';
 import { Toaster } from 'react-hot-toast';
+import SchrollUp from '@/components/shared/ScrollUp';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,9 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="scroll-smooth" lang="en">
       <body className={`${BebasNeue.variable}`}>
         <Navbar />
+        <SchrollUp />
         {children}
         <Toaster position="bottom-right" />
       </body>

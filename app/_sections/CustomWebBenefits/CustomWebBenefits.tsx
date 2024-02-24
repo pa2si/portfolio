@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import reasonsData from './reasonsData';
 import { motion } from 'framer-motion';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
 
 const CustomWebBenefits = () => {
   const [visibleReasonsCount, setVisibleReasonsCount] = useState(3);
@@ -46,29 +52,37 @@ const CustomWebBenefits = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary to-transparent "></div>
         </div>
       </div>
-      <section className="max-w-7xl mx-auto">
-        <div className="bg-white text-gray-800 p-8">
+      <section className="max-w-7xl mx-auto ">
+        <div className="  p-8">
           <h2 className="text-2xl font-semibold mb-4">
             Find here just a few reasons...
           </h2>
-          <div className="space-y-6 ">
+          <div className="space-y-6  ">
             {reasonsData.slice(0, visibleReasonsCount).map((reason, index) => (
               <motion.div
                 key={index}
-                className="card bordered shadow-sm shadow-primary bg-base-200 bg-opacity-10"
+                className="card bordered shadow-sm shadow-primary bg "
                 variants={index < 3 ? slideIn : staggeredAnimation}
                 initial="initial"
                 whileInView="animate"
                 viewport={{ once: true }}
                 custom={index}
               >
-                <div className="card-body">
-                  <h3 className="card-title">{reason.title}</h3>
-                  <p>{reason.description}</p>
+                <div className="card-body p-2 ">
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="item-1">
+                      <AccordionTrigger>
+                        <h3 className="card-title">{reason.title}</h3>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <p className="text-[1rem]">{reason.description}</p>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
                 </div>
               </motion.div>
             ))}
-            <div className="flex justify-center ">
+            <div className="flex justify-center  ">
               {visibleReasonsCount < reasonsData.length && (
                 <button
                   onClick={showMoreReasons}
