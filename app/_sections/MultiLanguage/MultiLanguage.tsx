@@ -2,7 +2,7 @@ import SingleCms from './_components/SingleCms';
 import { MotionSection } from '@/lib/MotionComponents';
 import cmsData from './data';
 
-const Cms = () => {
+const MultiLanguage = () => {
   const slideIn = {
     initial: {
       opacity: 0.3,
@@ -40,4 +40,4 @@ const Cms = () => {
     </MotionSection>
   );
 };
-export default Cms;
+export default MultiLanguage;

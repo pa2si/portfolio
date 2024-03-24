@@ -1,8 +1,8 @@
-v 0.1.3
+v 0.1.4
 
 new:
 
-- new link for CMS site
+- removed social media links from navbar and footer
 
 what's done:
 

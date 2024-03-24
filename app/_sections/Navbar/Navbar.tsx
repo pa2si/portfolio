@@ -123,13 +123,13 @@ const Navbar = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link href={functionalitiesId} onClick={handleLinkClick}>
-                        {functionalities}
+                      <Link href={multiLanguageId} onClick={handleLinkClick}>
+                        {multiLanguage}
                       </Link>
                     </li>
                     <li>
-                      <Link href={multiLanguageId} onClick={handleLinkClick}>
-                        {multiLanguage}
+                      <Link href={functionalitiesId} onClick={handleLinkClick}>
+                        {functionalities}
                       </Link>
                     </li>
                   </ul>
@@ -174,19 +174,19 @@ const Navbar = () => {
                   <li>
                     <Link
                       className="whitespace-nowrap"
-                      href={functionalitiesId}
+                      href={multiLanguageId}
                       onClick={handleLinkClick}
                     >
-                      {functionalities}
+                      {multiLanguage}
                     </Link>
                   </li>
                   <li>
                     <Link
                       className="whitespace-nowrap"
-                      href={multiLanguageId}
+                      href={functionalitiesId}
                       onClick={handleLinkClick}
                     >
-                      {multiLanguage}
+                      {functionalities}
                     </Link>
                   </li>
                 </ul>
@@ -221,7 +221,7 @@ const Navbar = () => {
                 <li key={email}>
                   <a
                     href={`mailto:${email}`}
-                    className="text-xl hover:text-primary-content hover:scale-120 transition-all duration-200 ease-in-out"
+                    className="text-2xl hover:text-primary-content  transition-all duration-200 ease-in-out"
                   >
                     {icon}
                   </a>
