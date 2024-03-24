@@ -1,10 +1,8 @@
-v 0.1.2
+v 0.1.3
 
 new:
 
-- Contact
-- Footer
-- Dark mode
+- new link for CMS site
 
 what's done:
 
@@ -14,3 +12,6 @@ what's done:
 - CustomWebBenefits
 - Layouts
 - Intermediates
+- Contact
+- Footer
+- Dark mode

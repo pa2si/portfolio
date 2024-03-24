@@ -24,7 +24,7 @@ export default function Home() {
       />
       <LayoutExamples />
       <Intermediate
-        text="We could integrate a Content Manage System *CMS and even setup multi language options if needed!"
+        text="Update your content yourself via a Content Management System *CMS and even have multi language options."
         id="multiLanguage"
       />
       <Cms />

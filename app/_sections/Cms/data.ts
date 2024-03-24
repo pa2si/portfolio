@@ -11,7 +11,7 @@ const cmsData: SingleCmsData[] = [
     title: 'Tortuga Storytelling',
     image: '/tortuga.png',
     alt: 'Tortuga Storytelling screenshot',
-    url: 'https://tortuga-cms.vercel.app/en/',
+    url: 'https://tortuga-storytelling.vercel.app/',
     description: 'Website with integrated CMS and multi language option',
   },
 ];
