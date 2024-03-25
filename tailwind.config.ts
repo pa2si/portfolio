@@ -41,6 +41,10 @@ const config = {
       },
     },
     extend: {
+      margin: {
+        '5p': '5%',
+        '15p': '15%',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

@@ -61,7 +61,7 @@ const Navbar = () => {
   return (
     <header id="navbar">
       <nav className="navbar bg-base-100 max-w-7xl mx-auto font-bebasNeue">
-        <div className="navbar-start">
+        <div className="mr-5p xl:mr-15p">
           <div className="dropdown">
             <div
               tabIndex={0}
@@ -139,11 +139,45 @@ const Navbar = () => {
                     {contact}
                   </Link>
                 </li>
+                {/* social icons */}
+                <div className=" flex justify-end mt-2">
+                  <ul className=" gap-3 text-primary ">
+                    {socialLinks.map((link, index) => {
+                      const { url, icon } = link;
+                      return (
+                        <li key={index}>
+                          <a
+                            href={url}
+                            className="text-xl hover:text-primary-content hover:scale-125 transition-all duration-200 ease-in-out"
+                          >
+                            {icon}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <ul className="flex-fap-2 text-primary">
+                    {email.map((item) => {
+                      const { email, icon } = item;
+                      return (
+                        <li key={email}>
+                          <a
+                            href={`mailto:${email}`}
+                            className="text-xl hover:text-primary-content  transition-all duration-200 ease-in-out"
+                          >
+                            {icon}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                  <ThemeToggle />
+                </div>
               </ul>
             )}
           </div>
           <Link
-            className="text-2xl text-primary sm:text-nowrap font-bold tracking-[7px] ml-2"
+            className="text-2xl flex gap-3 text-primary text-nowrap font-bold tracking-[7px] ml-2"
             href="/"
           >
             Pascal <span className="text-secondary text-nowrap">Is Coding</span>
@@ -198,7 +232,7 @@ const Navbar = () => {
           </ul>
         </div>
         {/* social icons */}
-        <div className="navbar-end mr-4 xl:mr-0">
+        <div className="navbar-end mr-4 xl:mr-0 hidden lg:flex">
           <ul className="flex gap-3 text-primary ">
             {socialLinks.map((link, index) => {
               const { url, icon } = link;

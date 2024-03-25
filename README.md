@@ -1,8 +1,9 @@
-v 0.1.4
+v 0.1.5
 
 new:
 
-- removed social media links from navbar and footer
+- the navbar logo "pascal is coding" is new designed
+- the email and darkmode symbol disappear in mobile view from the header but appear in the menu
 
 what's done:
 
