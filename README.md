@@ -1,9 +1,8 @@
-v 0.1.5
+v 0.1.6
 
 new:
 
-- the navbar logo "pascal is coding" is new designed
-- the email and darkmode symbol disappear in mobile view from the header but appear in the menu
+- Projects in Development
 
 what's done:
 
@@ -12,6 +11,8 @@ what's done:
 - About
 - CustomWebBenefits
 - Layouts
+- MultiLanguaes
+- Projects in Development
 - Intermediates
 - Contact
 - Footer

@@ -5,9 +5,15 @@ import { useRef } from 'react';
 import cmsData from '../data';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-type SingleCmsProps = (typeof cmsData)[number];
+type MultiLanguageItemProps = (typeof cmsData)[number];
 
-const SingleCms = ({ title, image, alt, url, description }: SingleCmsProps) => {
+const MultiLanguageItem = ({
+  title,
+  image,
+  alt,
+  url,
+  description,
+}: MultiLanguageItemProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -51,4 +57,4 @@ const SingleCms = ({ title, image, alt, url, description }: SingleCmsProps) => {
     </motion.div>
   );
 };
-export default SingleCms;
+export default MultiLanguageItem;

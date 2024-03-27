@@ -13,10 +13,12 @@ const Footer = () => {
     layoutsId,
     contact,
     contactId,
+    devModeProjects,
+    devModeProjectsId,
   } = menuLinks;
   return (
     <footer className="footer footer-center p-10 bg-primary bg-opacity-90 text-primary-content rounded">
-      <nav className="grid grid-flow-col gap-4">
+      <nav className="grid md:grid-cols-5 gap-3">
         <Link className="link link-hover" href={aboutId}>
           {about}
         </Link>
@@ -26,7 +28,10 @@ const Footer = () => {
         <Link className="link link-hover" href={layoutsId}>
           {layouts}
         </Link>
-        <Link className="link link-hover" href={contactId}>
+        <Link className="link link-hover" href={devModeProjectsId}>
+          {devModeProjects}
+        </Link>
+        <Link className="link link-hover " href={contactId}>
           {contact}
         </Link>
       </nav>

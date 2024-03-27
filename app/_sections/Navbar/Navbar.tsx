@@ -18,6 +18,8 @@ const Navbar = () => {
     functionalitiesId,
     multiLanguage,
     multiLanguageId,
+    devModeProjects,
+    devModeProjectsId,
     contact,
     contactId,
   } = menuLinks;
@@ -132,6 +134,11 @@ const Navbar = () => {
                         {functionalities}
                       </Link>
                     </li>
+                    <li>
+                      <Link href={devModeProjectsId} onClick={handleLinkClick}>
+                        {devModeProjects}
+                      </Link>
+                    </li>
                   </ul>
                 </li>
                 <li>
@@ -221,6 +228,13 @@ const Navbar = () => {
                       onClick={handleLinkClick}
                     >
                       {functionalities}
+                    </Link>
+                    <Link
+                      className="whitespace-nowrap"
+                      href={devModeProjectsId}
+                      onClick={handleLinkClick}
+                    >
+                      {devModeProjects}
                     </Link>
                   </li>
                 </ul>

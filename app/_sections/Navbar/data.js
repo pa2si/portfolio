@@ -25,4 +25,6 @@ export const menuLinks = {
   multiLanguageId: '#multiLanguage',
   contact: 'Contact',
   contactId: '#contact',
+  devModeProjects: 'Projects in Development',
+  devModeProjectsId: '#devModeProjects',
 };

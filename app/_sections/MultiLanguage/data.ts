@@ -1,12 +1,4 @@
-interface SingleCmsData {
-  title: string;
-  image: string;
-  alt: string;
-  url: string;
-  description: string;
-}
-
-const cmsData: SingleCmsData[] = [
+const multiLanguageData = [
   {
     title: 'Tortuga Storytelling',
     image: '/tortuga.png',
@@ -16,4 +8,4 @@ const cmsData: SingleCmsData[] = [
   },
 ];
 
-export default cmsData;
+export default multiLanguageData;

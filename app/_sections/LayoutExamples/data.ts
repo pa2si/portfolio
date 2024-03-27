@@ -1,12 +1,4 @@
-interface Layouts {
-  title: string;
-  image: string;
-  alt: string;
-  url: string;
-  description: string;
-}
-
-const layoutsData: Layouts[] = [
+const layoutsData = [
   {
     title: 'Backroads',
     image: '/backroads.png',

@@ -1,23 +1,21 @@
-import SingleCms from './_components/SingleCms';
+import DevModeProject from './_components/DevModeProject';
+import devModeProjectsData from './data';
 import { MotionSection } from '@/lib/MotionComponents';
-import cmsData from './data';
 
-const MultiLanguage = () => {
+const DevModeProjects = () => {
   const slideIn = {
     initial: {
-      opacity: 0.3,
-      y: 100,
+      opacity: 0,
+      x: -200,
     },
     animate: {
       opacity: 1,
-      y: 0,
-
+      x: 0,
       transition: {
         duration: 1,
       },
     },
   };
-
   return (
     <MotionSection
       className="max-w-7xl mx-auto bg-base-300 bg-opacity-10 shadow-lg shadow-primary p-12 border-t-2 my-8 rounded-lg"
@@ -27,17 +25,17 @@ const MultiLanguage = () => {
       viewport={{ once: true }}
     >
       <div
-        className={`p-4 ${
-          cmsData.length <= 2
-            ? 'flex justify-center items-center gap-8'
-            : 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'
-        }`}
+        className="p-4 ${
+       
+            flex flex-wrap justify-center items-center gap-8
+  
+ "
       >
-        {cmsData.map((singleCms, index) => (
-          <SingleCms key={index} {...singleCms} />
+        {devModeProjectsData.map((devModeProject, index) => (
+          <DevModeProject key={index} {...devModeProject} />
         ))}
       </div>
     </MotionSection>
   );
 };
-export default MultiLanguage;
+export default DevModeProjects;
