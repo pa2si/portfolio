@@ -1,8 +1,8 @@
-v 0.1.10
+v 0.1.11
 
 new:
 
-- funcionalities section: rotato animation when entering view only for desktop
+- funcionalities section: achieving now with useEffect the restricted animation on mobile view
 
 what's done:
 
