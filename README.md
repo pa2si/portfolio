@@ -1,8 +1,8 @@
-v 0.1.9
+v 0.1.10
 
 new:
 
-- meta description updated
+- funcionalities section: rotato animation when entering view only for desktop
 
 what's done:
 

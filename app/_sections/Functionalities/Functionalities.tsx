@@ -75,10 +75,10 @@ const Functionalities: React.FC = () => {
     setItemsToShow((prevItemsToShow) => prevItemsToShow + 4);
   };
 
-  const slideIn = {
+  let slideIn = {
     initial: {
       opacity: 0,
-      rotate: -40,
+      rotate: 0,
     },
     animate: {
       opacity: 1,
@@ -86,10 +86,28 @@ const Functionalities: React.FC = () => {
 
       transition: {
         duration: 1,
-        delay: 0.6,
+        delay: 0,
       },
     },
   };
+  const isMobile = window.innerWidth < 768; //Add the width you want to check for here (now 768px)
+  if (!isMobile) {
+    slideIn = {
+      initial: {
+        opacity: 0,
+        rotate: -40,
+      },
+      animate: {
+        opacity: 1,
+        rotate: 0,
+
+        transition: {
+          duration: 1,
+          delay: 0.6,
+        },
+      },
+    };
+  }
 
   return (
     <>
