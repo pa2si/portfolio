@@ -53,12 +53,12 @@ export default function Home() {
       />
       <MultiLanguages />
       <Intermediate
-        text="Discover a selection of custom-coded examples showcasing general functionalities for web apps."
+        text="Discover general functionalities for web apps."
         id={functionalitiesId}
       />
       <Functionalities />
       <Intermediate
-        text="Explore some Projects that are still in development"
+        text="Explore Projects that are still in development"
         id={devModeProjectsId}
       />
       <DevModeProjects />

@@ -1,10 +1,8 @@
-v 0.1.7
+v 0.1.8
 
 new:
 
-- checkbox for contactform
-- imprint in footer
-- privacy policy in footer
+- Edited titles
 
 what's done:
 
