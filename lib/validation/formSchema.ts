@@ -14,4 +14,8 @@ export const FormSchema = z.object({
     .string()
     .min(3, { message: 'Oops, that was too short' })
     .max(2200, { message: 'Message is too long' }),
+  agreeToTerms: z
+    .boolean()
+    .default(false)
+    .refine((val) => val === true, 'You must agree to the terms to proceed'),
 });

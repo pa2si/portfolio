@@ -1,8 +1,10 @@
-v 0.1.6
+v 0.1.7
 
 new:
 
-- Projects in Development
+- checkbox for contactform
+- imprint in footer
+- privacy policy in footer
 
 what's done:
 

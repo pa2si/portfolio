@@ -14,11 +14,13 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { Checkbox } from '@/components/ui/checkbox';
 import { Textarea } from '@/components/ui/textarea';
 import { z } from 'zod';
 import { Loader } from 'lucide-react';
 import { sendEmail } from '@/utils/actions';
 import toast from 'react-hot-toast';
+import Link from 'next/link';
 
 const Contact = () => {
   // 1. Define your form.
@@ -28,6 +30,7 @@ const Contact = () => {
       name: '',
       senderEmail: '',
       message: '',
+      agreeToTerms: false,
     },
   });
 
@@ -125,6 +128,29 @@ const Contact = () => {
                   />
                 </FormControl>
                 <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="agreeToTerms"
+            render={({ field }) => (
+              <FormItem className="flex flex-row items-start space-x-3 space-y-0 rounded-md border p-4">
+                <FormControl>
+                  <Checkbox
+                    checked={field.value}
+                    onCheckedChange={field.onChange}
+                  />
+                </FormControl>
+                <div className="space-y-1 leading-none">
+                  <FormLabel>
+                    I agree to the{' '}
+                    <Link href="/privacy" className="underline">
+                      {' '}
+                      Privacy Policy
+                    </Link>
+                  </FormLabel>
+                </div>
               </FormItem>
             )}
           />

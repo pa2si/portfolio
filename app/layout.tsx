@@ -5,6 +5,7 @@ import Navbar from './_sections/Navbar/Navbar';
 import { BebasNeue } from './fonts';
 import { Toaster } from 'react-hot-toast';
 import SchrollUp from '@/components/shared/ScrollUp';
+import Footer from './_sections/Footer/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <SchrollUp />
         {children}
         <Toaster position="bottom-right" />
+        <Footer />
       </body>
     </html>
   );

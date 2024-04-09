@@ -18,7 +18,7 @@ const Footer = () => {
   } = menuLinks;
   return (
     <footer className="footer footer-center p-10 bg-primary bg-opacity-90 text-primary-content rounded">
-      <nav className="grid md:grid-cols-5 gap-3">
+      <nav className="grid md:grid-cols-7 gap-3">
         <Link className="link link-hover" href={aboutId}>
           {about}
         </Link>
@@ -33,6 +33,12 @@ const Footer = () => {
         </Link>
         <Link className="link link-hover " href={contactId}>
           {contact}
+        </Link>
+        <Link className="link link-hover " href={'/imprint'}>
+          Imprint
+        </Link>
+        <Link className="link link-hover " href={'/privacy'}>
+          Privacy Policy
         </Link>
       </nav>
       <nav>

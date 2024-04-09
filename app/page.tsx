@@ -6,7 +6,6 @@ import Functionalities from './_sections/Functionalities/Functionalities';
 import LayoutExamples from './_sections/LayoutExamples/LayoutExamples';
 import Contact from './_sections/Contact/Contact';
 import MultiLanguages from './_sections/MultiLanguage/MultiLanguages';
-import Footer from './_sections/Footer/Footer';
 
 import { menuLinks } from '@/app/_sections/Navbar/data';
 import DevModeProjects from './_sections/DevModeProjects/DevModeProjects';
@@ -49,7 +48,7 @@ export default function Home() {
       />
       <LayoutExamples />
       <Intermediate
-        text="Update your content yourself via a Content Management System *CMS and even have multi language options."
+        text="Take advantage of multi language site options"
         id={multiLanguageId}
       />
       <MultiLanguages />
@@ -69,7 +68,6 @@ export default function Home() {
         id={contactId}
       />
       <Contact />
-      <Footer />
     </main>
   );
 }

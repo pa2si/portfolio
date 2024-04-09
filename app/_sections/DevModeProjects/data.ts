@@ -4,7 +4,7 @@ const devModeProjectsData = [
     image: '/erdkugel.jpg',
     alt: 'erdkugel screenshot',
     url: 'https://erdkugel.net/',
-    description: 'Contact site for a postproduction compoany ',
+    description: 'Contact site for a post production comppany ',
   },
   {
     title: 'Mercancia',
