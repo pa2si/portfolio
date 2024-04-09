@@ -1,5 +1,4 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -66,6 +65,7 @@ const Card: React.FC<CardProps> = ({ item, index }) => {
 };
 
 const Functionalities: React.FC = () => {
+  const [itemsToShow, setItemsToShow] = useState(4);
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
@@ -81,18 +81,20 @@ const Functionalities: React.FC = () => {
   const slideIn = {
     initial: {
       opacity: 0,
-      x: isDesktop ? 0 : -40,
       rotate: isDesktop ? -40 : 0,
     },
     animate: {
       opacity: 1,
-      x: 0,
       rotate: 0,
       transition: {
         duration: 1,
         delay: isDesktop ? 0.6 : 0,
       },
     },
+  };
+
+  const showMoreItems = () => {
+    setItemsToShow((prevItemsToShow) => prevItemsToShow + 4);
   };
 
   return (
@@ -104,12 +106,17 @@ const Functionalities: React.FC = () => {
       viewport={{ once: true }}
     >
       <div className="grid grid-cols-1 gap-8 p-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {functionalitiesData
-          .slice(0, isDesktop ? functionalitiesData.length : 4)
-          .map((item, index) => (
-            <Card key={index} item={item} index={index} />
-          ))}
+        {functionalitiesData.slice(0, itemsToShow).map((item, index) => (
+          <Card key={index} item={item} index={index} />
+        ))}
       </div>
+      {itemsToShow < functionalitiesData.length && (
+        <div className="flex justify-center my-6">
+          <button onClick={showMoreItems} className="btn btn-primary">
+            More examples
+          </button>
+        </div>
+      )}
     </motion.section>
   );
 };

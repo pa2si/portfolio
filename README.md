@@ -1,8 +1,8 @@
-v 0.1.11
+v 0.1.12
 
 new:
 
-- funcionalities section: achieving now with useEffect the restricted animation on mobile view
+- funcionalities section: more results button back again
 
 what's done:
 
