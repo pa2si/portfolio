@@ -1,8 +1,8 @@
-v 0.1.8
+v 0.1.9
 
 new:
 
-- Edited titles
+- meta description updated
 
 what's done:
 
