@@ -4,8 +4,11 @@ import Link from 'next/link';
 import { useEffect, useState, useRef } from 'react';
 import { socialLinks, email, menuLinks } from './data';
 import ThemeToggle from '@/components/shared/ThemeToggle';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
+  const pathname = usePathname();
+
   const {
     about,
     aboutId,
@@ -95,7 +98,7 @@ const Navbar = () => {
                 <li>
                   <Link
                     className="text-xl"
-                    href={aboutId}
+                    href={pathname === '/' ? `${aboutId}` : `/${aboutId}`}
                     onClick={handleLinkClick}
                   >
                     {about}
@@ -104,7 +107,11 @@ const Navbar = () => {
                 <li>
                   <Link
                     className="text-xl"
-                    href={customWebBenefitsId}
+                    href={
+                      pathname === '/'
+                        ? `${customWebBenefitsId}`
+                        : `/${customWebBenefitsId}`
+                    }
                     onClick={handleLinkClick}
                   >
                     {customWebBenefits}
@@ -113,36 +120,65 @@ const Navbar = () => {
                 <li>
                   <Link
                     className="text-xl"
-                    href={layoutsId}
+                    href={pathname === '/' ? `${layoutsId}` : `/${layoutsId}`}
                     onClick={handleLinkClick}
                   >
                     {examples}
                   </Link>
                   <ul className="p-2">
                     <li>
-                      <Link href={layoutsId} onClick={handleLinkClick}>
+                      <Link
+                        href={
+                          pathname === '/' ? `${layoutsId}` : `/${layoutsId}`
+                        }
+                        onClick={handleLinkClick}
+                      >
                         {layouts}
                       </Link>
                     </li>
                     <li>
-                      <Link href={multiLanguageId} onClick={handleLinkClick}>
+                      <Link
+                        href={
+                          pathname === '/'
+                            ? `${multiLanguageId}`
+                            : `/${multiLanguageId}`
+                        }
+                        onClick={handleLinkClick}
+                      >
                         {multiLanguage}
                       </Link>
                     </li>
                     <li>
-                      <Link href={functionalitiesId} onClick={handleLinkClick}>
+                      <Link
+                        href={
+                          pathname === '/'
+                            ? `${functionalitiesId}`
+                            : `/${functionalitiesId}`
+                        }
+                        onClick={handleLinkClick}
+                      >
                         {functionalities}
                       </Link>
                     </li>
                     <li>
-                      <Link href={devModeProjectsId} onClick={handleLinkClick}>
+                      <Link
+                        href={
+                          pathname === '/'
+                            ? `${devModeProjectsId}`
+                            : `/${devModeProjectsId}`
+                        }
+                        onClick={handleLinkClick}
+                      >
                         {devModeProjects}
                       </Link>
                     </li>
                   </ul>
                 </li>
                 <li>
-                  <Link className="text-xl" href={contactId}>
+                  <Link
+                    className="text-xl"
+                    href={pathname === '/' ? `${contactId}` : `/${contactId}`}
+                  >
                     {contact}
                   </Link>
                 </li>
@@ -194,10 +230,20 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex ">
           <ul className="menu menu-horizontal text-lg text-primary info px-1 tracking-[4px] transition-all divide-purple-200 ease-in-out ">
             <li>
-              <Link href={aboutId}>{about}</Link>
+              <Link href={pathname === '/' ? `${aboutId}` : `/${aboutId}`}>
+                {about}
+              </Link>
             </li>
             <li>
-              <Link href={customWebBenefitsId}>{customWebBenefits}</Link>
+              <Link
+                href={
+                  pathname === '/'
+                    ? `${customWebBenefitsId}`
+                    : `/${customWebBenefitsId}`
+                }
+              >
+                {customWebBenefits}
+              </Link>
             </li>
             <li>
               <details ref={detailsRef}>
@@ -206,7 +252,7 @@ const Navbar = () => {
                   <li>
                     <Link
                       className="whitespace-nowrap"
-                      href={layoutsId}
+                      href={pathname === '/' ? `${layoutsId}` : `/${layoutsId}`}
                       onClick={handleLinkClick}
                     >
                       {layouts}
@@ -215,7 +261,11 @@ const Navbar = () => {
                   <li>
                     <Link
                       className="whitespace-nowrap"
-                      href={multiLanguageId}
+                      href={
+                        pathname === '/'
+                          ? `${multiLanguageId}`
+                          : `/${multiLanguageId}`
+                      }
                       onClick={handleLinkClick}
                     >
                       {multiLanguage}
@@ -224,14 +274,22 @@ const Navbar = () => {
                   <li>
                     <Link
                       className="whitespace-nowrap"
-                      href={functionalitiesId}
+                      href={
+                        pathname === '/'
+                          ? `${functionalitiesId}`
+                          : `/${functionalitiesId}`
+                      }
                       onClick={handleLinkClick}
                     >
                       {functionalities}
                     </Link>
                     <Link
                       className="whitespace-nowrap"
-                      href={devModeProjectsId}
+                      href={
+                        pathname === '/'
+                          ? `${devModeProjectsId}`
+                          : `/${devModeProjectsId}`
+                      }
                       onClick={handleLinkClick}
                     >
                       {devModeProjects}
@@ -241,7 +299,10 @@ const Navbar = () => {
               </details>
             </li>
             <li>
-              <Link href={contactId}>{contact}</Link>
+              <Link href={pathname === '/' ? `${contactId}` : `/${contactId}`}>
+                {' '}
+                {contact}{' '}
+              </Link>
             </li>
           </ul>
         </div>

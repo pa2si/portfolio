@@ -1,8 +1,8 @@
-v 0.1.12
+v 0.1.13
 
 new:
 
-- funcionalities section: more results button back again
+- menu links now with pathname
 
 what's done:
 

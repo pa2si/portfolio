@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import { socialLinks, email, menuLinks } from '../Navbar/data';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();
+
   const currentYear = new Date().getFullYear();
   const {
     about,
@@ -19,19 +24,40 @@ const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-primary bg-opacity-90 text-primary-content rounded">
       <nav className="grid md:grid-cols-7 gap-3">
-        <Link className="link link-hover" href={aboutId}>
+        <Link
+          className="link link-hover"
+          href={pathname === '/' ? `${aboutId}` : `/${aboutId}`}
+        >
           {about}
         </Link>
-        <Link className="link link-hover" href={customWebBenefitsId}>
+        <Link
+          className="link link-hover"
+          href={
+            pathname === '/'
+              ? `${customWebBenefitsId}`
+              : `/${customWebBenefitsId}`
+          }
+        >
           {customWebBenefits}
         </Link>
-        <Link className="link link-hover" href={layoutsId}>
+        <Link
+          className="link link-hover"
+          href={pathname === '/' ? `${layoutsId}` : `/${layoutsId}`}
+        >
           {layouts}
         </Link>
-        <Link className="link link-hover" href={devModeProjectsId}>
+        <Link
+          className="link link-hover"
+          href={
+            pathname === '/' ? `${devModeProjectsId}` : `/${devModeProjectsId}`
+          }
+        >
           {devModeProjects}
         </Link>
-        <Link className="link link-hover " href={contactId}>
+        <Link
+          className="link link-hover "
+          href={pathname === '/' ? `${contactId}` : `/${contactId}`}
+        >
           {contact}
         </Link>
         <Link className="link link-hover " href={'/imprint'}>
