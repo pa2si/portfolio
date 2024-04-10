@@ -1,8 +1,8 @@
-v 0.1.15
+v 0.1.16
 
 new:
 
-- added the text "berlin / germany based " in about text
+- share text adapted in ShareButton
 
 what's done:
 

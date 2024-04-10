@@ -14,8 +14,8 @@ const ShareButton: React.FC<ShareButtonProps> = ({
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Example Title',
-          text: 'Check out this content!',
+          title: 'Pascal Is Coding Portfolio',
+          text: 'Check out my Portfolio Site!',
           url: window.location.href,
         });
         toast.success('Content shared successfully');
