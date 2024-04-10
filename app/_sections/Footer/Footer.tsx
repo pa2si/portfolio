@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { socialLinks, email, menuLinks } from '../Navbar/data';
 import { usePathname } from 'next/navigation';
+import ShareButton from '@/components/shared/ShareButton';
 
 const Footer = () => {
   const pathname = usePathname();
@@ -83,6 +84,10 @@ const Footer = () => {
                 </li>
               );
             })}
+            <ShareButton
+              className="text-primary-content"
+              hoverClassName="hover:text-secondary"
+            />
           </ul>
         </div>
       </nav>

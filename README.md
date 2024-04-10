@@ -1,8 +1,9 @@
-v 0.1.13
+v 0.1.14
 
 new:
 
-- menu links now with pathname
+- shareButton implemented in navbar and footer
+- added hover to ThemeToggle
 
 what's done:
 

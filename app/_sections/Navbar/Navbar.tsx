@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from 'react';
 import { socialLinks, email, menuLinks } from './data';
 import ThemeToggle from '@/components/shared/ThemeToggle';
 import { usePathname } from 'next/navigation';
+import ShareButton from '@/components/shared/ShareButton';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -199,7 +200,7 @@ const Navbar = () => {
                       );
                     })}
                   </ul>
-                  <ul className="flex-fap-2 text-primary">
+                  <ul className="flex text-primary mr-4 ">
                     {email.map((item) => {
                       const { email, icon } = item;
                       return (
@@ -213,6 +214,10 @@ const Navbar = () => {
                         </li>
                       );
                     })}
+                    <ShareButton
+                      className="text-primary"
+                      hoverClassName="hover:text-primary-content"
+                    />
                   </ul>
                   <ThemeToggle />
                 </div>
@@ -323,7 +328,7 @@ const Navbar = () => {
               );
             })}
           </ul>
-          <ul className="flex-fap-2 text-primary ml-3 pr-8">
+          <ul className="flex gap-3 text-primary ml-3 pr-8">
             {email.map((item) => {
               const { email, icon } = item;
               return (
@@ -337,6 +342,10 @@ const Navbar = () => {
                 </li>
               );
             })}
+            <ShareButton
+              className="text-primary"
+              hoverClassName="hover:text-primary-content"
+            />
           </ul>
           <ThemeToggle />
         </div>
