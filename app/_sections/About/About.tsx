@@ -49,8 +49,9 @@ const About = () => {
               About Pascal Morgan
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Hi, I&apos;m Pascal Morgan, a Fullstack Developer passionate about
-              creating unique websites. Ready to bring your vision to life!
+              Hi, I&apos;m Pascal Morgan, a Berlin / Germany based Fullstack
+              Developer passionate about creating unique websites. Ready to
+              bring your vision to life!
             </p>
           </div>
           <div className="flex justify-center md:justify-start">

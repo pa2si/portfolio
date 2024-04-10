@@ -1,9 +1,8 @@
-v 0.1.14
+v 0.1.15
 
 new:
 
-- shareButton implemented in navbar and footer
-- added hover to ThemeToggle
+- added the text "berlin / germany based " in about text
 
 what's done:
 
